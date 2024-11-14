@@ -1,6 +1,54 @@
 ...@base.d2
 
-rack: {
-    ups-rack
-    pdu-rack
+Power
+
+Rack: {
+    Transfer Switch
+    UPS
+    PDU
+
+    Transfer Switch -> PDU
+    UPS -> Transfer Switch: primary
+
+
+    switch-rack-agg
+    PDU -> switch-rack-agg: 5
+
+    switch-rack
+    PDU -> switch-rack: 6
+
+    islandfox
+    PDU -> islandfox: 7
+
+    pikvm-rack
+    PDU -> pikvm-rack: 8
+
+    bengalfox: {
+        A
+        B
+    }
+    PDU -> bengalfox.A: 9
+    PDU -> bengalfox.B: 10
+
+    ziply-fiber-box
+    PDU -> ziply-fiber-box: 11
+
+    router: {
+        A
+        B
+    }
+    PDU -> router.A: 12
+    PDU -> router.B: 13
+
+    tape-library
+    PDU -> tape-library: 14
+
+    NVR
+    PDU -> NVR: 15
+
+    router-backup
+    PDU -> router-backup: 16
 }
+
+Power -> Rack.UPS
+Power -> Rack.Transfer Switch: backup

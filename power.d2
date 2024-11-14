@@ -3,12 +3,12 @@
 Power
 
 Rack {
-    Transfer Switch
+    TS: Transfer Switch
     UPS: ups-rack
     PDU: pdu-rack
 
-    Transfer Switch -> PDU
-    UPS -> Transfer Switch: primary
+    TS -> PDU
+    UPS -> TS: primary
 
 
     switch-rack-agg
@@ -51,4 +51,4 @@ Rack {
 }
 
 Power -> Rack.UPS
-Power -> Rack.Transfer Switch: backup
+Power -> Rack.TS: backup
